@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 01:21:19 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 10:56:37 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/12 13:11:24 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int		issorted_a(t_node **head, t_node **headb)
 {
+	if (!head || !(*head))
+		exit (0);
+	if ((*head)->next == NULL)
+		return (1);
 	while ((*head)->next)
 	{
 		if ((*head)->data < (*head)->next->data)

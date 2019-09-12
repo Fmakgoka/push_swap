@@ -38,6 +38,12 @@ struct node		*ft_put(int agc, char **agv)
 
 	a = NULL;
 	i = 1;
+	// ft_putnbr(agc);
+	if (agc == 0)
+	{
+		push_last(&a, ft_atoi(agv[0]));
+		return (a);
+	}
 	while (i < agc)
 	{
 		push_last(&a, ft_atoi(agv[i]));

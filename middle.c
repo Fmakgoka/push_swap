@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 08:55:53 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 10:45:08 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/12 15:01:11 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int		tosize(t_node **head)
 {
-	int count;
+	int		count;
+	t_node	*a;
 
 	a = *head;
 	count = 0;

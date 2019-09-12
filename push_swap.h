@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 13:19:48 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/12 11:14:33 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/12 15:12:32 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ typedef struct node{
     int data;
     struct node* next;
 }t_node;
-t_node *a;
-t_node *b;
+
 void	sa(t_node **head);
 void	sb(t_node **head);
 void	pa(t_node **a, t_node **b, int data);
@@ -78,7 +77,9 @@ void	call_rb(t_node **head);
 void	call_pb(t_node **heada, t_node **headb);
 void	call_rrb(t_node **head_a);
 void	sort_fivehund_less(t_node **stack_a, t_node **stack_b);
-void		create_eleven_chunks(t_node **stack_a, t_node **stack_b);
-
+void	create_eleven_chunks(t_node **stack_a, t_node **stack_b);
+char	**fixstr(char **s);
+int		newlen(char **str);
+void	checkerror(int argc, int i, char **number);
 
 #endif
