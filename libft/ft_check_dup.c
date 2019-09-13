@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 11:00:08 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 11:16:44 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/13 10:53:48 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_check_dup(int argc, char **argv)
 	int i;
 	int j;
 
-	i = 1;
+	i = 0;
 	while (i < argc - 1)
 	{
 		j = i + 1;

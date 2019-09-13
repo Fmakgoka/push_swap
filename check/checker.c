@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 15:04:22 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/12 15:05:06 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/13 12:22:34 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ int		main(int argc, char **argv)
 	i = 0;
 	if (argc > 1)
 	{
+		if (!ft_strcmp(argv[1], ""))
+			exit(0);
 		argc--;
 		if (argc == 1)
 		{
 			number = ft_strsplit(argv[1], ' ');
-			argc = newlen(number);
+			if (!(argc = newlen(number)))
+				exit(0);
 		}
 		else
 			number = fixstr(argv);

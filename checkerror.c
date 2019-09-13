@@ -30,15 +30,15 @@ int		newlen(char **str)
 void	checkerror(int argc, int i, char **number)
 {
 
-    if (i == 0 && argc == 0)
+/*    if (i == 0 && argc == 0)
         if (!ft_isint(number[i]) || !ft_isnumber(number[i]))
         {
             ft_putendl_fd("Error", 2);
             exit(0);
-        }
+        }*/
 	while (i < argc)
 	{
-		if (!ft_isint(number[i]) || !ft_check_dup(argc, number)
+		if (!ft_isint(number[i]) || (ft_check_dup(argc, number) == 0)
 				|| !ft_isnumber(number[i]))
 		{
 			ft_putendl_fd("Error", 2);

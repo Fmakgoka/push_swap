@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 12:48:00 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 10:53:23 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/13 11:07:56 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ struct node		*ft_put(int agc, char **agv)
 	int		i;
 
 	a = NULL;
-	i = 1;
+	i = 0;
 	// ft_putnbr(agc);
 	if (agc == 0)
 	{
