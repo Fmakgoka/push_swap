@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 09:31:39 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 09:33:50 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/15 00:34:30 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_five_things(t_node **head, t_node **headb)
 	sort3(head);
 	if ((*headb)->data < (*headb)->next->data)
 	{
-		sa(headb);
-		ft_putendl("sa");
+		sb(headb);
+		ft_putendl("sb");
 	}
 	pa(head, headb, (*headb)->data);
 	ft_putendl("pa");

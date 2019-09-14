@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 12:33:48 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/13 12:22:38 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/15 01:00:28 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sa(t_node **head)
 	t_node	*tempp;
 	int		store;
 
-	if (!tosize(head))
+	if (!tosize(head) || tosize(head) == 1)
 		return ;
 	tempp = *head;
 	temp = tempp->next;
@@ -34,7 +34,7 @@ void	ra(t_node **head)
 
 	temp = *head;
 	tempp = *head;
-	if (!tosize(head))
+	if (!tosize(head) || tosize(head) == 1)
 		return ;
 	while (temp->next != NULL)
 	{
@@ -55,6 +55,8 @@ void	rra(t_node **head)
 		return ;
 	seclast = NULL;
 	last = *head;
+	if (*head == NULL || (*head)->next == NULL)
+		return ;
 	while (last->next != NULL)
 	{
 		seclast = last;
@@ -69,19 +71,17 @@ void	pa(t_node **a, t_node **b, int data)
 {
 	t_node	*head;
 
-	if (!tosize(b) || !tosize(a))
-		return ;
 	head = (t_node*)malloc(sizeof(t_node));
 	head->data = data;
 	head->next = (*a);
 	(*a) = head;
 	if ((*b)->next)
 	{
-		deletep(*b);
+		deletep(b);
 	}
 	else
 	{
-		*b = NULL;
 		free(*b);
+		*b = NULL;
 	}
 }

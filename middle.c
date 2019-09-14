@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 08:55:53 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/12 15:01:11 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/14 16:51:56 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,21 @@ int		tosize(t_node **head)
 	return (count);
 }
 
+int		get_median(t_node *head, int i, int j)
+{
+	t_node *ptr;
+
+	ptr = head;
+	while (ptr && (i < j))
+	{
+		if (i + 1 == j)
+			return (ptr->data);
+		ptr = ptr->next;
+		i++;
+	}
+	return (0);
+}
+
 int		middle(t_node **head)
 {
 	int		median_val;
@@ -37,18 +52,13 @@ int		middle(t_node **head)
 
 	i = 0;
 	current = *head;
-	clone = clonelst(current);
+	clone = ft_lstmap(current);
 	sorttmp(&clone);
 	if (tosize(&current) % 2 == 0)
 		j = tosize(&current) / 2;
 	else
 		j = (tosize(&current) / 2) + 1;
-	while (clone && (i < j))
-	{
-		if (i + 1 == j)
-			median_val = clone->data;
-		clone = clone->next;
-		i++;
-	}
+	median_val = get_median(clone, i, j);
+	ft_lstdel(&clone);
 	return (median_val);
 }

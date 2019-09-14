@@ -6,13 +6,13 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 09:04:15 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/13 11:22:49 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/15 00:56:01 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int			ft_do_op(t_node **head_a, t_node **head_b)
+int		ft_do_op(t_node **head_a, t_node **head_b)
 {
 	char *line;
 
@@ -30,8 +30,13 @@ int			ft_do_op(t_node **head_a, t_node **head_b)
 				|| ft_strcmp(line, "rrr") == 0)
 			reverse(line, head_a, head_b);
 		else
+		{
+			ft_putendl_fd("Error", 2);
 			exit(0);
+		}
+		line != NULL ? ft_strdel(&line) : 0;
 	}
+	line != NULL ? ft_strdel(&line) : 0;
 	issorted_a(head_a, head_b) ? ft_putendl("OK") : ft_putendl("KO");
 	return (1);
 }

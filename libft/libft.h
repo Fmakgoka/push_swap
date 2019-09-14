@@ -80,6 +80,6 @@ char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
 int		ft_isnumber(char *str);
 int		ft_isint(char *str);
-void	ft_free(char **str);
+void	ft_free(char ***str);
 int		ft_check_dup(int argc, char **argv);
 #endif

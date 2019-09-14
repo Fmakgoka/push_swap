@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 14:09:21 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/13 12:18:32 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:05:37 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	push(char *line, t_node **head_a, t_node **head_b)
 {
 	if (ft_strcmp(line, "pa") == 0)
 	{
-		if(tosize(head_b))
+		if (tosize(head_b))
 			pa(head_a, head_b, (*head_b)->data);
 	}
 	else if (ft_strcmp(line, "pb") == 0)

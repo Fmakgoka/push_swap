@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-void	deletep(t_node *head)
+void	deletep(t_node **head)
 {
 	t_node	*temp;
 
-	temp = head->next;
-	head->data = head->next->data;
-	head->next = temp->next;
+	temp = (*head)->next;
+	(*head)->data = (*head)->next->data;
+	(*head)->next = temp->next;
 	temp->next = NULL;
 	free(temp);
 }

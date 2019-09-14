@@ -6,25 +6,50 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:05:15 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 09:41:55 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:03:16 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node		*clonelst(t_node *head)
+void		ft_lstadd(t_node **alst, t_node *new)
 {
-	t_node *newnode;
+	new->next = *alst;
+	*alst = new;
+}
 
-	newnode = (t_node*)malloc(sizeof(t_node));
-	if (head == NULL)
-		return (NULL);
-	else
+t_node		*ft_lstnew(int content)
+{
+	t_node *lst;
+
+	lst = (t_node*)malloc(sizeof(t_node));
+	lst->data = content;
+	lst->next = NULL;
+	return (lst);
+}
+
+t_node		*ft_lstmap(t_node *lst)
+{
+	t_node *new_lst;
+	t_node *new_elem;
+	t_node *prev_elem;
+
+	new_lst = NULL;
+	if (lst)
 	{
-		newnode->data = head->data;
-		newnode->next = clonelst(head->next);
-		return (newnode);
+		new_lst = ft_lstnew(lst->data);
+		prev_elem = new_lst;
+		lst = lst->next;
+		while (lst)
+		{
+			ft_lstadd(&new_elem, ft_lstnew(lst->data));
+			prev_elem->next = new_elem;
+			prev_elem = new_elem;
+			lst = lst->next;
+		}
+		prev_elem->next = NULL;
 	}
+	return (new_lst);
 }
 
 void		sorttmp(t_node **head)

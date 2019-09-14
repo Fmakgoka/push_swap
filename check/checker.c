@@ -6,38 +6,45 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 15:04:22 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/13 12:22:34 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/14 16:33:53 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../push_swap.h"
 
-int		main(int argc, char **argv)
+static void			clean_up(int argc, char **number, t_node **a, t_node **b)
 {
-	int		i;
-	t_node	*a;
-	t_node	*b;
-	char	**number;
+	argc == 2 ? ft_free(&number) : 0;
+	ft_do_op(a, b);
+	free_stuff(a, b);
+}
 
-	i = 0;
-	if (argc > 1)
+int					main(int argc, char **argv)
+{
+	t_node			*a;
+	t_node			*b;
+	char			**number;
+	int				ac;
+
+	ac = argc;
+	b = NULL;
+	if (ac > 1)
 	{
 		if (!ft_strcmp(argv[1], ""))
 			exit(0);
-		argc--;
-		if (argc == 1)
+		ac--;
+		if (ac == 1)
 		{
 			number = ft_strsplit(argv[1], ' ');
-			if (!(argc = newlen(number)))
+			if (!(ac = newlen(number)))
 				exit(0);
 		}
 		else
 			number = fixstr(argv);
-		checkerror(argc, i, number);
-		a = ft_put(argc, number);
-		ft_do_op(&a, &b);
+		checkerror(ac, number);
+		a = ft_put(ac, number);
+		clean_up(argc, number, &a, &b);
 	}
-
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 12:42:33 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/13 12:10:36 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:55:51 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,18 @@ void	rrb(t_node **head)
 void	pb(t_node **a, t_node **b, int data)
 {
 	t_node	*head;
+
 	head = (t_node*)malloc(sizeof(t_node));
 	head->data = data;
 	head->next = (*b);
 	(*b) = head;
 	if ((*a)->next)
 	{
-		deletep(*a);
+		deletep(a);
 	}
 	else
 	{
-		(*a) = NULL;
 		free(*a);
+		(*a) = NULL;
 	}
 }

@@ -6,14 +6,15 @@
 #    By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/12 11:44:56 by fmakgoka          #+#    #+#              #
-#    Updated: 2019/09/13 10:42:39 by fmakgoka         ###   ########.fr        #
+#    Updated: 2019/09/15 01:05:00 by fmakgoka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap.a
 SRC = add.c ft_small.c instruct2.c instuct.c issorted_a.c middle.c\
 	  minmax.c sorting43.c sortings.c sort_fivehun.c sort_hun.c sorttmp.c \
-	  swab.c rules.c ruleall.c ruleb.c  check/checkerlst.c checkerror.c
+	  swab.c rules.c ruleall.c ruleb.c  check/checkerlst.c checkerror.c\
+	  check/ft_lstdel.c
 OBJECTS = *.o
 
 CFLAGS = -Wall -Werror -Wextra
@@ -35,4 +36,4 @@ fclean: clean
 	@make fclean -C libft/
 	@rm checker push_swap
 
-re:		fclean all
+re: fclean all

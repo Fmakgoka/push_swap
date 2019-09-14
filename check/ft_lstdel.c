@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 11:30:35 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/10 11:03:33 by fmakgoka         ###   ########.fr       */
+/*   Created: 2019/09/14 16:42:48 by fmakgoka          #+#    #+#             */
+/*   Updated: 2019/09/14 16:43:27 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int		ft_isnumber(char *str)
+void	ft_lstdel(t_node **head)
 {
-	int i;
+	t_node *temp;
 
-	i = 0;
-	if (str[i] == '-')
-		i++;
-	while (str[i] && (str[i] == ' ' || str[i] == '\t'))
-		i++;
-	while (str[i] != '\0')
+	temp = *head;
+	while (temp)
 	{
-		if (ft_isdigit(str[i]) == 0)
-			return (0);
-		i++;
+		(*head) = (*head)->next;
+		free(temp);
+		temp = (*head);
 	}
-	return (1);
+}
+
+void	free_stuff(t_node **stack_a, t_node **stack_b)
+{
+	if (stack_a && (*stack_a))
+	{
+		ft_lstdel(stack_a);
+	}
+	if (stack_b && (*stack_b))
+	{
+		ft_lstdel(stack_b);
+	}
 }

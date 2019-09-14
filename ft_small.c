@@ -6,13 +6,13 @@
 /*   By: fmakgoka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 15:05:16 by fmakgoka          #+#    #+#             */
-/*   Updated: 2019/09/11 09:07:50 by fmakgoka         ###   ########.fr       */
+/*   Updated: 2019/09/14 16:49:20 by fmakgoka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int		small(t_node *stack, char *flag)
+static int				small(t_node *stack, char *flag)
 {
 	int			nbr;
 	int			pos;
@@ -40,12 +40,13 @@ static int		small(t_node *stack, char *flag)
 	return (0);
 }
 
-static int		big(t_node *stack, char *flag)
+static int				big(t_node *stack, char *flag)
 {
 	int			nbr;
 	int			pos;
 	int			ctr;
 	t_node		*i;
+
 	nbr = stack->data;
 	i = stack->next;
 	pos = 1;
@@ -67,7 +68,7 @@ static int		big(t_node *stack, char *flag)
 	return (0);
 }
 
-int			find_small_big(t_node *stack, char *flag)
+int						find_small_big(t_node *stack, char *flag)
 {
 	if (ft_strequ(flag, "sn"))
 		return (small(stack, flag));
